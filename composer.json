@@ -1,0 +1,28 @@
+{
+    "name": "omnilight/icons",
+    "description": "Yii2 extension for managing icons from Font Awesome",
+    "keywords": ["yii", "font awesome"],
+    "minimum-stability": "dev",
+    "authors": [
+        {
+            "name": "Pavel Agalecky",
+            "email": "pavel.agalecky@gmail.com"
+        }
+    ],
+    "type": "yii2-extension",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/omnilight/icons"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "yiisoft/yii2": "dev-master",
+        "yiisoft/yii2-bootstrap": "dev-master",
+        "fortawesome/font-awesome": "v4.0.3",
+    },
+    "autoload": {
+        "psr-0": { "omnilight\\icons\\": "" }
+    }
+}
