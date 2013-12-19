@@ -16,6 +16,7 @@
         "fortawesome/font-awesome": "v4.0.3"
     },
     "autoload": {
-        "psr-0": { "omnilight\\": "" }
-    }
+        "psr-0": { "yz\\icons\\": "" }
+    },
+    "target-dir": "yz"
 }
