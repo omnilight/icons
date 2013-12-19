@@ -1,6 +1,6 @@
 <?php
 
-namespace omnilight\icons;
+namespace yz\icons;
 
 
 use yii\base\InvalidCallException;
@@ -22,27 +22,40 @@ class Icons
 	public static $iconsSet = self::SET_FONTAWESOME;
 
 	public static $config = [
-		self::SET_FONTAWESOME => ['prefix' => 'fa-', 'tag' => 'i', 'asset' => '\\omnilight\\icons\\FontAwesomeAsset'],
+		self::SET_FONTAWESOME => ['prefix' => 'fa fa-', 'tag' => 'i', 'asset' => '\\yz\\icons\\FontAwesomeAsset'],
 	];
 
 	private static $_isAssetRegistered = [];
 
 	/**
+	 * Outputs icon tag with specified name
 	 * @param string $name the name of the icon
 	 * @param array $options the icon options
-	 * @param string $iconSet the name of the icon set
+	 * @param string $iconsSet the name of the icon set
 	 * @param string $tag the html tag used to create icon
 	 * @throws \yii\base\InvalidCallException
 	 * @return string
 	 */
-	public static function i($name, $options = [], $iconSet = null, $tag = null)
+	public static function i($name, $options = [], $iconsSet = null, $tag = null)
 	{
-		$iconSet = $iconSet? : static::$iconsSet;
-		if (!isset(self::$_isAssetRegistered[$iconSet]) )
-			throw new InvalidCallException('Icon set'.$iconSet.' must be registered before using Icons::i function');
-		$tag = $tag? : static::$config[$iconSet]['tag'];
-		$options['class'] = static::$config[$iconSet]['iconSet'].$name;
+		$iconsSet = $iconsSet? : static::$iconsSet;
+		$tag = $tag? : static::$config[$iconsSet]['tag'];
+		$options['class'] = static::$config[$iconsSet]['prefix'].$name;
 		return Html::tag($tag, '', $options);
+	}
+
+	/**
+	 * The same as {@see i} but output icons as a prefix for the text, followed by space symbol
+	 * @param string $name the name of the icon
+	 * @param array $options the icon options
+	 * @param string $iconsSet the name of the icon set
+	 * @param string $tag the html tag used to create icon
+	 * @throws \yii\base\InvalidCallException
+	 * @return string
+	 */
+	public static function p($name, $options = [], $iconsSet = null, $tag = null)
+	{
+		return static::i($name, $options, $iconsSet, $tag) . ' ';
 	}
 
 	/**
@@ -52,7 +65,7 @@ class Icons
 	public static function register($view, $iconSet = null)
 	{
 		if ($iconSet === null) {
-			foreach(static::$config as $iconSet) {
+			foreach(static::$config as $iconSet => $values) {
 				static::register($view, $iconSet);
 			}
 		} else {

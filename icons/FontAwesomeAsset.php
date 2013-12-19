@@ -1,6 +1,6 @@
 <?php
 
-namespace omnilight\icons;
+namespace yz\icons;
 
 use yii\base\InvalidConfigException;
 use yii\web\AssetBundle;
