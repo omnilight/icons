@@ -10,19 +10,9 @@
         }
     ],
     "type": "yii2-extension",
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/omnilight/icons"
-        }
-    ],
     "require": {
         "php": ">=5.4.0",
         "yiisoft/yii2": "dev-master",
-        "yiisoft/yii2-bootstrap": "dev-master",
         "fortawesome/font-awesome": "v4.0.3"
-    },
-    "autoload": {
-        "psr-0": { "omnilight\\icons\\": "" }
     }
 }
