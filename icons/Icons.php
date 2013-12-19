@@ -40,7 +40,7 @@ class Icons
 	{
 		$iconsSet = $iconsSet? : static::$iconsSet;
 		$tag = $tag? : static::$config[$iconsSet]['tag'];
-		$options['class'] = static::$config[$iconsSet]['prefix'].$name;
+		Html::addCssClass($options, static::$config[$iconsSet]['prefix'].$name);
 		return Html::tag($tag, '', $options);
 	}
 
@@ -56,6 +56,25 @@ class Icons
 	public static function p($name, $options = [], $iconsSet = null, $tag = null)
 	{
 		return static::i($name, $options, $iconsSet, $tag) . ' ';
+	}
+
+	/**
+	 * Returns icon as a class sutable for future modifications
+	 * @param string $name the name of the icon
+	 * @param array $options the icon options
+	 * @param string $iconsSet the name of the icon set
+	 * @param string $tag the html tag used to create icon
+	 * @return Icon
+	 */
+	public static function o($name, $options = [], $iconsSet = null, $tag = null)
+	{
+		$icon = new Icon();
+		$icon->name = $name;
+		$icon->options = $options;
+		$icon->iconsSet = $iconsSet;
+		$icon->tag = $tag;
+
+		return $icon;
 	}
 
 	/**
