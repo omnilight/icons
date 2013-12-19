@@ -14,15 +14,15 @@ use yii\web\View;
  */
 class Icons
 {
-	const SET_FONTAWESOME = 'font-awesome';
+	const SET_FONT_AWESOME = 'font-awesome';
 
 	/**
 	 * @var string Name of the default set of icons
 	 */
-	public static $iconsSet = self::SET_FONTAWESOME;
+	public static $iconsSet = self::SET_FONT_AWESOME;
 
 	public static $config = [
-		self::SET_FONTAWESOME => ['prefix' => 'fa fa-', 'tag' => 'i', 'asset' => '\\yz\\icons\\FontAwesomeAsset'],
+		self::SET_FONT_AWESOME => ['prefix' => 'fa fa-', 'tag' => 'i', 'asset' => '\\yz\\icons\\FontAwesomeAsset'],
 	];
 
 	private static $_isAssetRegistered = [];
@@ -59,6 +59,7 @@ class Icons
 	}
 
 	/**
+	 * Registers asset bundle for using with icons
 	 * @param View $view
 	 * @param string|null $iconSet
 	 */
