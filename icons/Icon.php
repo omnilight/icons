@@ -1,13 +1,14 @@
 <?php
 
 namespace yz\icons;
+use yii\base\Object;
 use yii\helpers\Html;
 
 
 /**
  * Class Icon
  */
-class Icon {
+class Icon extends Object {
 	public $name;
 	public $options = [];
 	public $iconsSet = null;
@@ -44,11 +45,22 @@ class Icon {
 	}
 
 	/**
+	 * Removes css class from the icon
+	 * @param string $class
+	 * @return $this
+	 */
+	public function rc($class)
+	{
+		Html::removeCssClass($this->options, $class);
+		return $this;
+	}
+
+	/**
 	 * Appends icon with some text
 	 * @param $value
 	 * @return $this
 	 */
-	public function append($value)
+	public function app($value)
 	{
 		$this->append = $value;
 		return $this;
@@ -59,7 +71,7 @@ class Icon {
 	 * @param $value
 	 * @return $this
 	 */
-	public function prepend($value)
+	public function pre($value)
 	{
 		$this->prepend = $value;
 		return $this;

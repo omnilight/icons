@@ -26,7 +26,7 @@ class FontAwesomeAsset extends AssetBundle
 		$sourcePath = Yii::getAlias($this->sourcePath);
 		$this->publishOptions['beforeCopy'] = function($from, $to) use ($sourcePath) {
 			if (strncmp(basename($from), '.', 1) === 0)
-				return false;
+				return false; // Do not copy hidden folders
 			else {
 				// Coping only css and fonts folders
 				foreach ($this->copyFolders as $folder) {
