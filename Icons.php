@@ -58,7 +58,7 @@ class Icons
     }
 
     /**
-     * Returns icon as a class suitable for future modifications
+     * Returns icon as an object suitable for future modifications
      * @param string $name the name of the icon
      * @param array $options the icon options
      * @param string $iconsSet the name of the icon set
