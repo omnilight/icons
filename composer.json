@@ -13,7 +13,7 @@
     "require": {
         "php": ">=5.4.0",
         "yiisoft/yii2": "dev-master",
-        "fortawesome/font-awesome": "v4.0.3"
+        "fortawesome/font-awesome": "4.*"
     },
     "autoload": {
         "psr-4": { "yz\\icons\\": "" }
