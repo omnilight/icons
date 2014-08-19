@@ -1,0 +1,20 @@
+{
+    "name": "icons",
+    "version": "0.0.0",
+    "authors": [
+        "Pavel Agalecky <pavel.agalecky@gmail.com>"
+    ],
+    "description": "Standard application based on Yii2",
+    "license": "MIT",
+    "private": true,
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "font-awesome": "~4.1.0",
+    }
+}
