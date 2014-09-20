@@ -9,7 +9,6 @@ use yii\web\View;
 
 /**
  * Class Icons
- * @package omnilight\icons
  */
 class Icons
 {
@@ -21,7 +20,7 @@ class Icons
     public static $iconsSet = self::SET_FONT_AWESOME;
 
     public static $config = [
-        self::SET_FONT_AWESOME => ['prefix' => 'fa fa-', 'tag' => 'i', 'asset' => '\\yz\\icons\\FontAwesomeAsset'],
+        self::SET_FONT_AWESOME => ['prefix' => 'fa fa-', 'tag' => 'i', 'asset' => '\yz\icons\FontAwesomeAsset'],
     ];
 
     private static $_isAssetRegistered = [];
