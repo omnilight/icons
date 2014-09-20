@@ -13,7 +13,7 @@
     "require": {
         "php": ">=5.4.0",
         "yiisoft/yii2": "dev-master",
-        "bower-asset/font-awesome": "~4"
+        "bower-asset/font-awesome": "4.*"
     },
     "autoload": {
         "psr-4": { "yz\\icons\\": "" }
